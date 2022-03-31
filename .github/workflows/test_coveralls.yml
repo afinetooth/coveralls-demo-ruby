@@ -1,0 +1,22 @@
+name: Test Coveralls
+on: [push, pull_request]
+
+jobs:
+  build_and_test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6.3
+        bundler-cache: true
+    - name: Run tests
+      run: bundle exec rspec
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
