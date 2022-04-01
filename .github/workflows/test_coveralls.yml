@@ -9,6 +9,7 @@ jobs:
   build_and_test:
     name: Build and test
     runs-on: ubuntu-latest
+    env: COVERALLS_NODE_DEBUG=1
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -25,4 +26,4 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         coveralls-endpoint: ${{ secrets.COVERALLS_ENDPOINT }}
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
-        env: COVERALLS_NODE_DEBUG=1
+
