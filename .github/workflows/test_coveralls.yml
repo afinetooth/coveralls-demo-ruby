@@ -26,4 +26,4 @@ jobs:
         coveralls-endpoint: ${{ secrets.COVERALLS_ENDPOINT }}
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
       env: 
-      COVERALLS_NODE_DEBUG: 1
+        COVERALLS_NODE_DEBUG: 1
