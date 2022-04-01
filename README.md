@@ -245,6 +245,8 @@ Follow the branch for your CI service and we'll pick up the conversation there:
 2. [Circle CI](https://github.com/afinetooth/coveralls-demo-ruby/tree/circle)
 3. ...
 
+Insignificant change to README to trigger a new build.
+
 <details>
   <summary></small>* other scenarios</small></summary>
 
