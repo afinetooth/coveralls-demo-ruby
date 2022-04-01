@@ -9,7 +9,7 @@ describe ClassOne do
     end
   end
 
-  Uncomment below to achieve 100% coverage
+  # Uncomment below to achieve 100% coverage
   describe "uncovered" do
     it "returns 'uncovered'" do
       expect(ClassOne.uncovered).to eql("uncovered")
