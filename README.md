@@ -5,8 +5,8 @@
 * [Ruby](https://www.ruby-lang.org/) — *Programming Language*
 * [Rspec](https://rspec.info/) — *Ruby Testing Library*
 * [simplecov](https://github.com/colszowka/simplecov) gem — *Code Coverage Library*
-* [simplecov-lcov](https://github.com/fortissimo1997/simplecov-lcov) gem — *SimpleCov formatter to generate lcov coverage report.*
-* [Coveralls Github Action](https://github.com/marketplace/actions/coveralls-github-action) - *Official Coveralls Github Action (master branch)* 
+* [simplecov-lcov](https://github.com/fortissimo1997/simplecov-lcov) gem — *SimpleCov formatter to generate lcov coverage report (master branch only)*
+* [Coveralls Github Action](https://github.com/marketplace/actions/coveralls-github-action) - *Official Coveralls Github Action (master branch only)* 
 
 ### How to run it:
 
