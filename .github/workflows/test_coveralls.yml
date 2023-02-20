@@ -31,4 +31,6 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         coveralls-endpoint: https://coveralls:alpha@covervlad.fly.dev
-        path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov 
+        path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
+        env:
+          COVERALLS_ENDPOINT: https://coveralls:alpha@covervlad.fly.dev
