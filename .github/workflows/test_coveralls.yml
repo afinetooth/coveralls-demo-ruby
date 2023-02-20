@@ -1,7 +1,7 @@
 name: Test Coveralls
 on:
   push:
-    branches: [master]
+    branches: [gmaster]
   pull_request:
     branches: [master]
 
@@ -9,19 +9,27 @@ jobs:
   build_and_test:
     name: Build and test
     runs-on: ubuntu-latest
+    env:
+      NODE_COVERALLS_DEBUG: 1
+      SSL_CERT_DIR: /etc/ssl/certs
     steps:
+    
     - name: Checkout code
       uses: actions/checkout@v2
+    
     - name: Install Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6.3
         bundler-cache: true
+    
     - name: Run tests
       run: bundle exec rspec
+    
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         coveralls-endpoint: ${{ secrets.COVERALLS_ENDPOINT }}
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
+        
