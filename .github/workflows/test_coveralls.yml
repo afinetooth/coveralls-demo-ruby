@@ -21,10 +21,9 @@ jobs:
       run: bundle exec rspec
     - name: Coveralls
       uses: coverallsapp/github-action@master
-      env: 
-        COVERALLS_NODE_DEBUG: 1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         coveralls-endpoint: ${{ secrets.COVERALLS_ENDPOINT }}
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
-        
+        env: 
+          COVERALLS_NODE_DEBUG: 1
