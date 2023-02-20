@@ -1,8 +1,7 @@
-require 'simplecov'
-require 'simplecov-lcov'
+require 'coveralls'
+Coveralls.wear!
 
-SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
-SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+require 'simplecov'
 SimpleCov.start do
   add_filter "/spec/"
 end
