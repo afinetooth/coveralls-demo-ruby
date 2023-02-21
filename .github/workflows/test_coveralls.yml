@@ -24,7 +24,7 @@ jobs:
         bundler-cache: false
     
     - name: Run tests
-      run: bundle exec rspec
+      run: bundle install && bundle exec rspec
     
     - name: Coveralls
       uses: coverallsapp/github-action@master
