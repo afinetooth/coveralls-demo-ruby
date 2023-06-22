@@ -27,8 +27,7 @@ jobs:
       run: bundle install && bundle exec rspec
     
     - name: Coveralls
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        coveralls-endpoint: https://coveralls:alpha@covervlad.fly.dev
-        path-to-lcov: ./coverage/lcov/coveralls-demo-ruby.lcov
+        
