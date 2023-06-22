@@ -26,8 +26,9 @@ jobs:
     - name: Run tests
       run: bundle install && bundle exec rspec
     
-    - name: Coveralls
+    - name: Upload coverage to Coveralls
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        coveralls-endpoint: https://enterprise-demo.coveralls.io/
         
