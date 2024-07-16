@@ -30,5 +30,5 @@ jobs:
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        coveralls-endpoint: http://coveralls.test
+        coveralls-endpoint: https://a70d-47-158-231-148.ngrok-free.app
         
