@@ -4,8 +4,8 @@ class ClassOne
     "covered"
   end
 
-  def self.uncovered
-    "uncovered"
-  end
+  # def self.uncovered
+  #   "uncovered"
+  # end
 
 end
