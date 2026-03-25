@@ -28,7 +28,7 @@ jobs:
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2
-      # with:
-      #   github-token: ${{ secrets.GITHUB_TOKEN }}
-      #   file: ./coverage/lcov/coveralls-demo-ruby.lcov
-      # coveralls-endpoint: https://2d62-47-145-39-95.ngrok-free.app
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./coverage/lcov/coveralls-demo-ruby.lcov
+        coveralls-endpoint: enterprise-demo.coveralls.io
