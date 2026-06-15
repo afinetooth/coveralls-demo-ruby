@@ -23,12 +23,42 @@ jobs:
         ruby-version: 2.7.7
         bundler-cache: false
     
-    - name: Run tests
+    - name: Run tests    
       run: bundle install && bundle exec rspec
     
-    - name: Coveralls
+    # - name: Coveralls
+    #   uses: coverallsapp/github-action@v2
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     coveralls-endpoint: https://enterprise-demo.coveralls.io
+    
+    - name: Coveralls Parallel Upload 1
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        coveralls-endpoint: https://0258-47-158-176-244.ngrok-free.app
-        
+        file: ./coverage/lcov/coveralls-demo-ruby.lcov
+        coveralls-endpoint: https://3e2e-47-158-221-143.ngrok-free.app
+        flag-name: subproject-test-01
+        parallel: true
+
+    - name: Coveralls Parallel Upload 2
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./coverage/lcov/coveralls-demo-ruby.lcov
+        coveralls-endpoint: https://3e2e-47-158-221-143.ngrok-free.app
+        flag-name: subproject-test-02
+        parallel: true
+
+  finish:
+    needs: build_and_test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        coveralls-endpoint: https://3e2e-47-158-221-143.ngrok-free.app
+        parallel-finished: true
+        carryforward: "subproject-test-01,subproject-test-02"
