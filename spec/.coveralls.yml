@@ -1,0 +1,5 @@
+status:
+  lib: 
+    coverage_threshold: 50.0                       # 10a — scalar false suppresses SourceDirectory "api"
+flags:
+  lib: lib
